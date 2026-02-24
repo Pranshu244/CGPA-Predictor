@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://Pranshu244:$HF_TOKEN@huggingface.co/spaces/Pranshu244/CGPA-Predictor main
+        run: git push --force https://Pranshu244:$HF_TOKEN@huggingface.co/spaces/Pranshu244/CGPA-Predictor main
