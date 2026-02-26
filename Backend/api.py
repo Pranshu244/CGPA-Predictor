@@ -3,12 +3,22 @@ from fastapi.responses import JSONResponse
 from schema.user_input import Student
 from model.predict import model, Model_version,predict_output
 import logging
+import sys
 
-logging.basicConfig(
-    filename="api.log",   
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
+
+logger = logging.getLogger("cgpa_backend")
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+
+
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+
+file_handler = logging.FileHandler("api.log")
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 
 
@@ -41,10 +51,10 @@ def predict_cgpa(student:Student):
         "Internal_Marks": student.internals
     }
     try:
-        logging.info(f"Received input: { {'Name': student.name, **user_input} }")
-        cgpa=predict_output(user_input)
-        logging.info(f"Prediction result: {cgpa}")
-        return JSONResponse(status_code=200,content={'CGPA':cgpa})
+        logger.info(f"Received input: { {'Name': student.name, **user_input} }")
+        cgpa = predict_output(user_input)
+        logger.info(f"Prediction result: {cgpa}")
+        return JSONResponse(status_code=200, content={'CGPA': cgpa})
     except Exception as e:
-        logging.error(f"Prediction error: {e}")
-        return JSONResponse(status_code=500,content=str(e))
+        logger.error(f"Prediction error: {e}")
+        return JSONResponse(status_code=500, content=str(e))
