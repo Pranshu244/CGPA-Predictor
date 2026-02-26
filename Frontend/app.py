@@ -1,8 +1,10 @@
 import streamlit as st
 import base64
 import requests
+import os
 
-API_Url="http://backend:8000/predict"
+
+API_Url = os.getenv("BACKEND_URL", "http://backend:8000/predict")
 
 def get_base64(bin_file):
     with open(bin_file,'rb') as f:
