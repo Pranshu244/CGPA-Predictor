@@ -207,3 +207,17 @@ The project is fully containerized with separate images for backend and frontend
 
 **Pranshu Srivastava**  
 Machine Learning | Backend Development | MLOps
+
+---
+## Pictures
+### PC view:
+![image alt](https://github.com/Pranshu244/CGPA-Predictor/blob/dbe4ad11ade2ea9211f00d9d727587add6b2db59/Pictures/Pic_1.png)
+
+![image alt](https://github.com/Pranshu244/CGPA-Predictor/blob/dbe4ad11ade2ea9211f00d9d727587add6b2db59/Pictures/Pic_2.png)
+
+### Mobile view:
+![image alt](https://github.com/Pranshu244/CGPA-Predictor/blob/43f32c234bf15205caf1203458e799c2f6cf64d9/Pictures/Pic_3.jpg)
+![image alt](https://github.com/Pranshu244/CGPA-Predictor/blob/43f32c234bf15205caf1203458e799c2f6cf64d9/Pictures/Pic_4.jpg)
+
+### Logging:
+![image alt](https://github.com/Pranshu244/CGPA-Predictor/blob/dbe4ad11ade2ea9211f00d9d727587add6b2db59/Pictures/Pic_5.png)
